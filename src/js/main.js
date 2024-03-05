@@ -1,4 +1,5 @@
 const searchButton = document.querySelector('.js-searchButton');
+const resetButton = document.querySelector('.js-resetButton');
 const inputSearch = document.querySelector('.js-inputSearch');
 const listResults = document.querySelector('.js-listResults');
 const listFavorites = document.querySelector('.js-listFavorites');
@@ -56,7 +57,6 @@ const handleSearch = (event) => {
       //muestro cards
       showedAnimes = data.data;
       renderAnimeCompleteCard(showedAnimes, listResults); //guardo valores en mi array showedAnimes
-      console.log(showedAnimes);
     });
 };
 
@@ -132,12 +132,17 @@ const showFavAnimeCard = () => {
 
 showFavAnimeCard();
 
-const closeButtonElement = document.querySelectorAll('js-closeButton');
-
-const handleClose = (event) => {
-  event.preventDefault();
-};
+const closeButtonElement = document.querySelectorAll('.js-closeButton');
 
 for (const button of closeButtonElement) {
   button.addEventListener('click', handleClose);
 }
+
+const handleReset = (event) => {
+  event.preventDefault();
+  listResults.innerHTML = '';
+  listFavorites.innerHTML = '';
+  localStorage.removeItem('favoritesAnimes');
+  inputSearch.value = null;
+};
+resetButton.addEventListener('click', handleReset);

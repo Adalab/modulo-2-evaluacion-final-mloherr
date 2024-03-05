@@ -4,6 +4,39 @@
 }
 
 .mainSection {
-    display: flex;
-    flex-direction: row;
+    margin: 20px;
 }
+
+.cardsSections {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+
+    &__sectionSearchedCards {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+    }
+    &__sectionFavorites {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.searchInputs {
+    display: flex;
+    gap: 10px;
+    width: 100vw;
+    &__inputSearch {
+        width: 25vw;
+    }
+}
+
+.button {
+    background-color: lightcoral;
+    border-radius: 10px;
+    padding: 10px 5px 10px 5px;
+}
+

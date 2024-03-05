@@ -1,5 +1,6 @@
 const searchButton = document.querySelector('.js-searchButton');
 const resetButton = document.querySelector('.js-resetButton');
+const resetFavoritesButton = document.querySelector('.js-resetFavoritesButton');
 const inputSearch = document.querySelector('.js-inputSearch');
 const listResults = document.querySelector('.js-listResults');
 const listFavorites = document.querySelector('.js-listFavorites');
@@ -146,3 +147,11 @@ const handleReset = (event) => {
   inputSearch.value = null;
 };
 resetButton.addEventListener('click', handleReset);
+
+const handleResetFavorites = (event) => {
+  event.preventDefault;
+  listFavorites.innerHTML = '';
+  localStorage.removeItem('favoritesAnimes');
+};
+
+resetFavoritesButton.addEventListener('click', handleResetFavorites);

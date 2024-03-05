@@ -1,15 +1,18 @@
 <main class="mainSection">
-  <section class="sectionSearch">
-    <input type="text" class="js-inputSearch" />
-    <h2>Resultados de la búsqueda</h2>
-    <button class="js-searchButton">Buscar</button>
-    <button class="js-resetButton">Reset</button>
+  <section class="searchInputs">
+    <input type="text" class="js-inputSearch searchInputs__inputSearch" />
+    <button class="js-searchButton button">Buscar</button>
+    <button class="js-resetButton button">Reset</button>
   </section>
-  <section class="sectionCards">
-    <ul class="js-listResults"></ul>
-  </section>
-  <section class="js-sectionFavorites">
-    <h2>Series favoritas</h2>
-    <ul class="js-listFavorites"></ul>
-  </section>
+  <div class="cardsSections">
+    <section class="cardsSections__sectionSearchedCards">
+      <h2>Resultados de la búsqueda</h2>
+      <ul class="js-listResults"></ul>
+    </section>
+    <section class="cardsSections__sectionFavorites">
+      <h2>Series favoritas</h2>
+      <ul class="js-listFavorites"></ul>
+      <button class="js-resetFavoritesButton button">Reset Favorites</button>
+    </section>
+  </div>
 </main>

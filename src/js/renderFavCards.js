@@ -2,6 +2,12 @@ const listFavorites = document.querySelector('.js-listFavorites');
 let favoritesAnimes = [];
 
 const handleAddFavorite = (event) => {
+  const favoritesAnimesLocalStorage = JSON.parse(
+    localStorage.getItem('favoritesAnimes')
+  );
+  if (favoritesAnimesLocalStorage !== null) {
+    favoritesAnimes = favoritesAnimesLocalStorage;
+  }
   listFavorites.innerHTML = '';
   const clickedLi = event.currentTarget;
   clickedLi.classList.add('favoriteAnime');
@@ -10,7 +16,7 @@ const handleAddFavorite = (event) => {
     return event.currentTarget.id === anime.mal_id.toString();
   });
   const indexFavoritesAnimes = favoritesAnimes.findIndex((favoriteAnime) => {
-    return favoriteAnime.mal_id === event.currentTarget.id;
+    return favoriteAnime.mal_id.toString() === event.currentTarget.id;
   }); // Si me devuelve -1, añado el elemento al array. Si no, no lo quiero añadir
   if (indexFavoritesAnimes === -1) {
     favoritesAnimes.push(animeSelected);
@@ -56,6 +62,10 @@ const renderFavAnimeCard = (array, container) => {
     newLi.appendChild(animeFavImage);
     newLi.appendChild(closeButton);
     container.appendChild(newLi);
+    const closeButtonElement = document.querySelectorAll('.js-closeButton');
+    for (const button of closeButtonElement) {
+      button.addEventListener('click', handleClose);
+    }
   }
 };
 

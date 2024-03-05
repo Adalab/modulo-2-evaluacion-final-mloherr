@@ -1,19 +1,19 @@
 // vite.config.js
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 // html partals
-import injectHTML from "vite-plugin-html-inject";
+import injectHTML from 'vite-plugin-html-inject';
 // optimize images
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 // Concatenate JavaScript files (like former Starter Kit)
-import concat from '@vituum/vite-plugin-concat'
+import concat from '@vituum/vite-plugin-concat';
 // Calculate paths
-import FastGlob from 'fast-glob'
+import FastGlob from 'fast-glob';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // Get all html files
 const htmlFilesList = Object.fromEntries(
-  FastGlob.sync('src/*.html').map(file => [
+  FastGlob.sync('src/*.html').map((file) => [
     // This remove `src/` as well as the file extension from each
     // file, so e.g. src/nested/foo.js becomes nested/foo
     path.relative(
@@ -22,40 +22,42 @@ const htmlFilesList = Object.fromEntries(
     ),
     // This expands the relative paths to absolute paths, so e.g.
     // src/nested/foo becomes /project/src/nested/foo.js
-    fileURLToPath(new URL(file, import.meta.url))
-  ]));
+    fileURLToPath(new URL(file, import.meta.url)),
+  ])
+);
 
 const inputFilesList = {
   ...htmlFilesList,
-  'main': 'src/js/main.js',
-}
+  main: 'src/js/main.js',
+};
 
 export default defineConfig({
-  base: "./",
-  root: "src",
-  publicDir: "../public",
+  base: './',
+  root: 'src',
+  publicDir: '../public',
   build: {
-    minify: "esbuild",
-    outDir: "../docs",
-    sourcemap: "inline",
+    minify: 'esbuild',
+    outDir: '../docs',
+    sourcemap: 'inline',
     emptyOutDir: true,
     rollupOptions: {
       input: inputFilesList,
       output: {
         sourcemap: true,
-        entryFileNames: ({name}) => {
-          if( name === 'main' ) {
+        entryFileNames: ({ name }) => {
+          if (name === 'main') {
             return 'js/main.js';
           }
           // default value
           // ref: https://rollupjs.org/configuration-options/#output-entryfilenames
-          return "[name].js";
+          return '[name].js';
         },
       },
     },
   },
   server: {
-    open: "/index.html",
+    open: '/index.html',
+    port: 3000,
   },
   plugins: [
     injectHTML(),
@@ -63,7 +65,7 @@ export default defineConfig({
       /* pass your config */
     }),
     concat({
-      input: ['main.js']
+      input: ['main.js'],
     }),
   ],
 });

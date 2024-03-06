@@ -1,7 +1,9 @@
 const listFavorites = document.querySelector('.js-listFavorites');
+const sectionFavorites = document.querySelector('.js-sectionFavorites');
 let favoritesAnimes = [];
 
 const handleAddFavorite = (event) => {
+  sectionFavorites.classList.remove('hidden');
   const favoritesAnimesLocalStorage = JSON.parse(
     localStorage.getItem('favoritesAnimes')
   );

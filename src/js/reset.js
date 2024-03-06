@@ -8,6 +8,7 @@ const handleReset = (event) => {
   localStorage.removeItem('favoritesAnimes');
   inputSearch.value = null;
   favoritesAnimes = [];
+  sectionFavorites.classList.add('hidden');
 };
 resetButton.addEventListener('click', handleReset);
 

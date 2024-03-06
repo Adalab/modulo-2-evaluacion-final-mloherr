@@ -79,6 +79,7 @@ const showFavAnimeCard = () => {
   if (favoritesAnimesLocalStorage !== null) {
     renderFavAnimeCard(favoritesAnimesLocalStorage, listFavorites);
   }
+  sectionFavorites.classList.remove('hidden');
 };
 
 showFavAnimeCard();

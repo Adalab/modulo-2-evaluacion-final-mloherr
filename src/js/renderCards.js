@@ -39,3 +39,5 @@ const renderAnimeCompleteCard = (array, listContainer) => {
     li.addEventListener('click', handleAddFavorite);
   }
 };
+
+// Cuando hago la petición al servidor de las cartas NORMALES que se incluyen en SHOWED CARDS, si esa card ya está en favoritos, le pone por defecto la clase favorite no se que.

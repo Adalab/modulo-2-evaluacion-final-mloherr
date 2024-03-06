@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buscador de Series de Anime</title>
+    
+    <link rel="stylesheet" href="./assets/index-bf0c8071.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+  <h1 class="header__tittle">Buscador de Series de Anime</h1>
+</header>
+
+      <main class="mainSection">
+  <section class="searchInputs">
+    <input type="text" class="js-inputSearch searchInputs__inputSearch" />
+    <button class="js-searchButton button">Buscar</button>
+    <button class="js-resetButton button">Reset</button>
+  </section>
+  <div class="cardsSections">
+    <section class="cardsSections__sectionSearchedCards">
+      <h2 class="cardsSections__sectionSearchedCards--title">
+        Resultados de la búsqueda
+      </h2>
+      <ul
+        class="js-listResults cardsSections__sectionSearchedCards--listResults"
+      ></ul>
+    </section>
+    <section class="cardsSections__sectionFavorites js-sectionFavorites hidden">
+      <h2 class="cardsSections__sectionFavorites--title">Series favoritas</h2>
+      <ul class="js-listFavorites"></ul>
+      <button class="js-resetFavoritesButton button">Reset Favorites</button>
+    </section>
+  </div>
+</main>
+
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

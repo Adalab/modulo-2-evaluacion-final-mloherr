@@ -30,13 +30,16 @@ const handleAddFavorite = (event) => {
 
 const renderFavImage = (anime) => {
   const animeFavImage = document.createElement('img');
-  if (anime.images.jpg.image_url) {
-    animeFavImage.setAttribute('src', anime.images.jpg.image_url);
-  } else {
+  if (
+    anime.images.jpg.image_url ===
+    'https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png'
+  ) {
     animeFavImage.setAttribute(
       'src',
       'https://via.placeholder.com/210x295/ffffff/666666/?text=TV'
     );
+  } else {
+    animeFavImage.setAttribute('src', anime.images.jpg.image_url);
   }
   animeFavImage.setAttribute('alt', 'Portada anime');
   return animeFavImage;

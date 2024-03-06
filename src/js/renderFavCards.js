@@ -17,7 +17,7 @@ const handleAddFavorite = (event) => {
   });
   const indexFavoritesAnimes = favoritesAnimes.findIndex((favoriteAnime) => {
     return favoriteAnime.mal_id.toString() === event.currentTarget.id;
-  }); // Si me devuelve -1, añado el elemento al array. Si no, no lo quiero añadir
+  });
   if (indexFavoritesAnimes === -1) {
     favoritesAnimes.push(animeSelected);
   }

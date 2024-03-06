@@ -11,10 +11,8 @@ const handleSearch = (event) => {
   fetch(`https://api.jikan.moe/v4/anime?q=${searchValue}`)
     .then((response) => response.json())
     .then((data) => {
-      //accediendo al array data que contiene cada info de cada anime
-      //muestro cards
       showedAnimes = data.data;
-      renderAnimeCompleteCard(showedAnimes, listResults); //guardo valores en mi array showedAnimes
+      renderAnimeCompleteCard(showedAnimes, listResults);
     });
 };
 

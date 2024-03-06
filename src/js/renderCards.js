@@ -33,11 +33,8 @@ const renderAnimeCompleteCard = (array, listContainer) => {
     newLi.appendChild(animeImage);
     listContainer.appendChild(newLi);
   }
-  // Escucho aquí porque si me hago un return de liElements, lo uso como variable global e intento iterar sobre el array antes de pintar los li, me lo coge como array vacío y no funciona. Igual si la creo como let
   const liElements = document.querySelectorAll('.js-itemLi');
   for (const li of liElements) {
     li.addEventListener('click', handleAddFavorite);
   }
 };
-
-// Cuando hago la petición al servidor de las cartas NORMALES que se incluyen en SHOWED CARDS, si esa card ya está en favoritos, le pone por defecto la clase favorite no se que.

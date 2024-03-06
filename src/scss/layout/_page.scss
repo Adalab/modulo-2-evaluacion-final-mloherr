@@ -14,16 +14,55 @@
     flex-direction: row-reverse;
 
     &__sectionSearchedCards {
-        width: 50vw;
+        width: 60vw;
         display: flex;
         flex-direction: column;
+        border: solid 2px rgb(179, 104, 223);
+        border-radius: 10px;
+
+        &--title{
+            text-align: center;
+            color: white;
+            background-color: rgb(179, 104, 223);
+            border: solid rgb(179, 104, 223) 2px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        & li {
+            display: flex;
+            flex-direction: column;
+
+            & h2 {
+                font-size: 20px;
+                text-wrap: wrap;
+                text-align: center;
+            }
+
+            & img {
+                height: 390px;
+                width: 300px;
+            }
+        }
+
+       
     }
     &__sectionFavorites {
-        width: 50vw;
+        width: 40vw;
         display: flex;
         flex-direction: column;
         gap: 10px;
+        border: solid 2px rgb(104, 223, 173);
+        border-radius: 10px;
        
+        &--title {
+            text-align: center;
+            color: white;
+            background-color: rgb(104, 223, 173);
+            border: solid rgb(104, 223, 173) 2px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
     
         & li {
             display: flex;
@@ -31,6 +70,8 @@
             justify-content: flex-start;
             align-items: center;
             gap: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
 
             & h2 {
                 font-size: 15px;

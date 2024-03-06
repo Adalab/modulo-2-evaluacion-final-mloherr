@@ -56,10 +56,10 @@ const renderFavAnimeCard = (array, container) => {
     const textButton = document.createTextNode('X');
     closeButton.appendChild(textButton);
     const newLi = document.createElement('li');
-    newLi.setAttribute('class', 'js-itemLi');
+    newLi.setAttribute('class', 'itemLi');
     newLi.setAttribute('id', anime.mal_id);
-    newLi.appendChild(animeFavTitle);
     newLi.appendChild(animeFavImage);
+    newLi.appendChild(animeFavTitle);
     newLi.appendChild(closeButton);
     container.appendChild(newLi);
     const closeButtonElement = document.querySelectorAll('.js-closeButton');

@@ -7,6 +7,7 @@ const handleReset = (event) => {
   listFavorites.innerHTML = '';
   localStorage.removeItem('favoritesAnimes');
   inputSearch.value = null;
+  favoritesAnimes = [];
 };
 resetButton.addEventListener('click', handleReset);
 
@@ -14,6 +15,7 @@ const handleResetFavorites = (event) => {
   event.preventDefault;
   listFavorites.innerHTML = '';
   localStorage.removeItem('favoritesAnimes');
+  favoritesAnimes = [];
 };
 
 resetFavoritesButton.addEventListener('click', handleResetFavorites);
